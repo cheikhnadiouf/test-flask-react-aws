@@ -23,9 +23,9 @@ phases:
       # - docker-compose exec -T api flake8 src
       # - docker-compose exec -T api black src --check
       # - docker-compose exec -T api isort src --check-only
-      - docker-compose exec -T client npm run lint
-      - docker-compose exec -T client npm run prettier:check
-      - docker-compose exec -T client npm run prettier:write
+      # - docker-compose exec -T client npm run lint
+      # - docker-compose exec -T client npm run prettier:check
+      # - docker-compose exec -T client npm run prettier:write
       - echo building prod images...
       - >
         docker build \
