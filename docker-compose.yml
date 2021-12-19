@@ -11,8 +11,8 @@ services:
     environment:
       - FLASK_ENV=production
       - APP_SETTINGS=src.config.ProductionConfig
-      - DATABASE_URL=postgres://postgres:postgres@api-db:5432/api_prod
-      - DATABASE_TEST_URL=postgres://postgres:postgres@api-db:5432/api_test
+      - DATABASE_URL=mysql://mysql:mysql@api-db:3306/api_prod
+      - DATABASE_TEST_URL=mysql://mysql:mysql@api-db:3306/api_test
       - SECRET_KEY=my_precious
     depends_on:
       - api-db
@@ -22,10 +22,10 @@ services:
       context: ./services/users/src/db
       dockerfile: Dockerfile
     expose:
-      - 5432
+      - 3306
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
+      - MYSQL_USER=mysql
+      - MYSQL_PASSWORD=mysql
 
   client:
     build:
