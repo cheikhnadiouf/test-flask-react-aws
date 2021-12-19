@@ -10,7 +10,7 @@ ENV PYTHONUNBUFFERED 1
 
 # install system dependencies
 RUN apt-get update \
-  && apt-get -y install netcat gcc mysql \
+  && apt-get -y install netcat gcc mysql-server mysql-client \
   && apt-get clean
 
 # install dependencies

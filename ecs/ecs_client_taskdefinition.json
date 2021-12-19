@@ -1,0 +1,25 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "%s.dkr.ecr.eu-west-3.amazonaws.com/easyguide-client:prod",
+      "essential": true,
+      "memoryReservation": 300,
+      "portMappings": [
+        {
+          "hostPort": 0,
+          "protocol": "tcp",
+          "containerPort": 80
+        }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "easyguide-client-log",
+          "awslogs-region": "us-west-1"
+        }
+      }
+    }
+  ],
+  "family": "easyguide-client-td"
+}

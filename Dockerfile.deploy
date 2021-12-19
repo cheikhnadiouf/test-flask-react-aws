@@ -21,7 +21,7 @@ WORKDIR /app
 RUN apk update && \
     apk add --no-cache --virtual build-deps \
     openssl-dev libffi-dev gcc python3-dev musl-dev g++ \
-    mysql-dev netcat-openbsd
+    mysql-server mysql-client netcat-openbsd
 RUN python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
     pip3 install --upgrade pip setuptools && \
